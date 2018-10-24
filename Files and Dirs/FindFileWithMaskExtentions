@@ -1,0 +1,22 @@
+//получить список всех файлов в директории с заданными расширениями
+import java.io.*;
+public class Solution  {
+public static void main (String args[]) throws IOException, FileNotFoundException {
+    //File file = new File("C:/temp/1.txt");
+    File dir = new File ("C:/temp/");
+
+    final String[] mask = {".txt",".7z"};
+    String[] files = dir.list(new FilenameFilter() {
+        @Override
+        public boolean accept(File dir, String name) {
+            for(String s : mask)
+                if(name.toLowerCase().endsWith(s)) return true;
+            return false;
+        }
+    });
+
+    for (String s : files)
+        System.out.println(s);
+
+}
+}
