@@ -1,0 +1,9 @@
+import java.rmi.*;
+
+ //Выставляемый удалённый интерфейс:
+ 
+public interface RemoteHelloService extends Remote {
+ 
+	Object sayHello(String name) throws RemoteException;
+ 
+}
